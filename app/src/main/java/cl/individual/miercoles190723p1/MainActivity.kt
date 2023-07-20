@@ -10,5 +10,15 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
+        initRecycler()
+    }
+
+    private fun initRecycler() {
+        val countryAdapter = CountryAdapter()
+
+
+        countryAdapter.setData(PaisesLatam.paises)
+
+        binding.recCountryList.adapter = countryAdapter
     }
 }
